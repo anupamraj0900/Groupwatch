@@ -71,7 +71,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Title value="Moonlight | Watching Website" />
+      <Title value="GroupWatch" />
 
       <div className="flex md:hidden justify-between items-center px-5 my-5">
         <Link to="/" className="flex gap-2 items-center">
@@ -80,7 +80,7 @@ const Home: FC = () => {
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Moon<span className="text-primary">light</span>
+            Group<span className="text-primary">Watch</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>
@@ -107,7 +107,7 @@ const Home: FC = () => {
                   "text-white font-medium after:absolute after:bottom-0 after:left-[13%] after:bg-white after:h-[3px] after:w-5"
                 } transition duration-300 hover:text-white`}
               >
-                TV Show
+              TV
               </button>
               <button
                 onClick={() => {
@@ -119,7 +119,7 @@ const Home: FC = () => {
                   "text-white font-medium after:absolute after:bottom-0 after:right-[9%] after:bg-white after:h-[3px] after:w-5"
                 } transition duration-300 hover:text-white`}
               >
-                Movie
+                Movies
               </button>
             </div>
             <div className="flex gap-6 items-center">
