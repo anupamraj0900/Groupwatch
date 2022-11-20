@@ -172,10 +172,8 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
             } hover:text-white transition duration-300`}
           >
             <BsBookmarkHeart size={25} />
-            <p>Join Private</p>
+            <p>Join Private Party</p>
           </button>
-
-      
 
           <button
             onClick={() => personalPageHandler("/bookmarked")}
@@ -185,11 +183,15 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
             } hover:text-white transition duration-300`}
           >
             <BsBookmarkHeart size={25} />
-            <p>Party</p>
+            <p>Create Party</p>
           </button>
+
+      
+
+          
         </div>
 
-        <div className="text-white text-lg font-medium mt-12">See you again! </div>
+        
         <div className="mt-8 ml-4 flex flex-col gap-6">
     
 
