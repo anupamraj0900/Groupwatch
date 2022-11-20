@@ -8,6 +8,7 @@ import Auth from "./pages/Auth";
 import Bookmarked from "./pages/Bookmarked";
 import Error from "./pages/Error";
 import Explore from "./pages/Explore";
+import FriendList from "./pages/FriendList";
 import History from "./pages/History";
 import Home from "./pages/Home";
 import MovieInfo from "./pages/Movie/MovieInfo";
@@ -97,6 +98,7 @@ function App() {
       <Route path="movie/:id/watch" element={<MovieWatch />} />
       <Route path="tv/:id/watch" element={<TVWatch />} />
       <Route path="explore" element={<Explore />} />
+      <Route path="friends" element={<FriendList />} />
       <Route path="search" element={<Search />} />
       <Route path="auth" element={<Auth />} />
       <Route
@@ -120,6 +122,7 @@ function App() {
         }
       />
       <Route path="*" element={<Error />} />
+      
     </Routes>
   );
 }

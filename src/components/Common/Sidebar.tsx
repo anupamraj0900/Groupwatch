@@ -155,9 +155,9 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
         <div className="text-white text-lg font-medium mt-12">Social</div>
         <div className="mt-8 ml-4 flex flex-col gap-6">
           <button
-            onClick={() => personalPageHandler("/bookmarked")}
+            onClick={() => personalPageHandler("/friends")}
             className={`flex gap-6 items-center  ${
-              location.pathname === "/bookmarked" &&
+              location.pathname === "/friends" &&
               "!text-primary border-r-4 border-primary font-medium"
             } hover:text-white transition duration-300`}
           >
