@@ -38,7 +38,9 @@ const MainHomeFilms: FC<MainHomeFilmsProps> = ({
         ) : (
           Object.entries(data as HomeFilms)
             .filter((section) => section[0] !== "Trending")
-            .map((section, index) => (
+            .map((section, index) => {
+              console.log(section[1])
+              return (
               <li key={index}>
                 <h2 className="text-xl text-white font-medium tracking-wider mb-3">
                   {section[0]}
@@ -46,7 +48,7 @@ const MainHomeFilms: FC<MainHomeFilmsProps> = ({
 
                 <SectionSlider films={section[1]} />
               </li>
-            ))
+            )})
         )}
       </ul>
     </>

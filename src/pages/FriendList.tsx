@@ -163,10 +163,12 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
           </div>
           
           <button className="hover:text-white transition duration-300" style={{width:"35%"}}> 
+          <Link to="/groups/62e13b6d-5cad-4ebd-82f6-709f934d9f81">
             <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center", height:50}}>
                   <IoEnterSharp size={"50px"} style={{paddingLeft: 20}}/>   
                   <p className ="text-white mt-5 text-xl font-medium mb-3" style={{textAlign: "left", paddingBottom: 5}}> Join party </p> 
             </div>
+            </Link>
           </button>
         </div>
 
@@ -179,10 +181,12 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
           </div>
           
           <button className="hover:text-white transition duration-300" style={{width:"35%"}}> 
+          <Link to="/groups/62e13b6d-5cad-4ebd-82f6-709f934d9f81">
             <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center", height:50}}>
                   <IoEnterSharp size={"50px"} style={{paddingLeft: 20}}/>   
                   <p className ="text-white mt-5 text-xl font-medium mb-3" style={{textAlign: "left", paddingBottom: 5}}> Join party </p> 
             </div>
+            </Link>
           </button>
         </div>
       </div>

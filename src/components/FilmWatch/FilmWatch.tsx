@@ -240,44 +240,14 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             <div className="md:text-xl text-lg font-medium text-white mt-5">
               Overview:
             </div>
-            {!detail && <Skeleton className="h-[84px] mt-2" />}
-            {detail && (
-              <ReadMore
-                limitTextLength={300}
-                className="md:text-lg text-base mt-1"
-              >
-                {media_type === "movie"
-                  ? detail.overview
-                  : currentEpisode?.overview}
-              </ReadMore>
-            )}
+            
           </div>
-          <Comment media_type={media_type} id={detail?.id} />
+          
         </div>
         <div className="shrink-0 md:max-w-[400px] w-full relative px-6">
           {!isMobile && <SearchBox />}
-          {media_type === "movie" && (
-            <RightbarFilms
-              name="Recommendations"
-              films={recommendations?.filter((item) => item.id !== detail?.id)}
-              limitNumber={4}
-              isLoading={!recommendations}
-              className="md:mt-24 mt-0"
-            />
-          )}
-          {media_type === "tv" && (
-            <div className="md:mt-24 mt-0">
-              <p className="mb-6 text-xl font-medium flex justify-between items-center">
-                <span className="text-white">Seasons:</span>
-                <BsThreeDotsVertical size={20} />
-              </p>
-              <SeasonSelection
-                detailSeasons={detailSeasons}
-                seasonId={seasonId}
-                episodeId={episodeId}
-              />
-            </div>
-          )}
+          
+          
         </div>
       </div>
       <Footer />

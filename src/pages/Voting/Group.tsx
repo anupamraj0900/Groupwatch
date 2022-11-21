@@ -18,6 +18,8 @@ import {FaUserCircle } from "react-icons/fa";
 import {IoEnterSharp} from "react-icons/io5"
 import { Chat } from "./Chat/Chat"
 import Voting from "./Voting";
+import { ImExit } from "react-icons/im";
+
 interface FriendListProps {}
 
 const Group: FunctionComponent<FriendListProps> = () => {
@@ -57,14 +59,21 @@ const Group: FunctionComponent<FriendListProps> = () => {
 <>
       <div className="flex">
       <div className="flex-grow pt-7 md:pl-10 px-3">
-      <div className="pb-4 border-b border-dark-lighten-2" style={{borderBottom: "1px solid black"}}>
+      <div className="pb-4 border-b border-dark-lighten-2" style={{borderBottom: "1px solid black", display: "flex", alignItems: "center"}}>
             <h1 className="text-[35px] text-white font-semibold uppercase">
               CoolCats' Group
             </h1>
+            
+            <div style={{paddingLeft: "5%"}}>
+            <Link to="/" style={{display: "flex"}}>
+              <ImExit size={25} style={{marginRight: 15}}/> Leave group
+            </Link>
+            </div>
+            
       </div>
 
       <div style={{display: "flex", flexDirection: "row", borderBottom: "1px solid black", height: "75vh"}}>
-        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}><Voting isUserReady={isUserReady} setIsUserReady={setIsUserReady} /></div>
+        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black", overflow: "auto"}}><Voting isUserReady={isUserReady} setIsUserReady={setIsUserReady} /></div>
         <div style={{width: "20%", float: "right", borderLeft: "1px solid black"}}><Chat /></div>
       </div>
 
