@@ -47,19 +47,7 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
   };
 
   const personalPageHandler = (destinationUrl: string) => {
-    if (!currentUser) {
-      toast.info("You need to login to use this feature", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-
-      return;
-    }
+    
 
     navigate(destinationUrl);
   };
