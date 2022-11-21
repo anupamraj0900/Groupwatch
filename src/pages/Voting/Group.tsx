@@ -48,13 +48,13 @@ const Group: FunctionComponent<FriendListProps> = () => {
     return () => unsubDoc();
   }, [currentUser]);
 
-  const defaultReadyVals = [false, false, false, false]
+  const defaultReadyVals = [true, true, true, false]
+  const [isUserReady, setIsUserReady] = useState(false);
   const [ready, setReady] = useState(defaultReadyVals);
 
   if (isError) return <div>ERROR</div>;
   return (
 <>
-      
       <div className="flex">
       <div className="flex-grow pt-7 md:pl-10 px-3">
       <div className="pb-4 border-b border-dark-lighten-2" style={{borderBottom: "1px solid black"}}>
@@ -64,7 +64,7 @@ const Group: FunctionComponent<FriendListProps> = () => {
       </div>
 
       <div style={{display: "flex", flexDirection: "row", borderBottom: "1px solid black", height: "75vh"}}>
-        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}><Voting /></div>
+        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}><Voting isUserReady={isUserReady} setIsUserReady={setIsUserReady} /></div>
         <div style={{width: "20%", float: "right", borderLeft: "1px solid black"}}><Chat /></div>
       </div>
 
@@ -126,7 +126,7 @@ const Group: FunctionComponent<FriendListProps> = () => {
             <p className="text-white mt-5 text-xl font-medium mb-3">
             {currentUser?.displayName} (You)
             </p>
-            {!ready[3] ?
+            {!isUserReady ?
             <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#CE2121", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height:30, width:90, marginTop: 8, marginLeft: 10}}>  
                 <p className ="text-white mt-5 text-xl font-medium mb-3" style={{textAlign: "center", paddingBottom: 5, fontSize: "100%"}}> Not Ready </p> 
             </div> 
