@@ -17,6 +17,7 @@ import { BsBookmarkHeart } from "react-icons/bs";
 import {FaUserCircle } from "react-icons/fa";
 import {IoEnterSharp} from "react-icons/io5"
 import { Chat } from "./Chat/Chat"
+import Voting from "./Voting";
 interface FriendListProps {}
 
 const Group: FunctionComponent<FriendListProps> = () => {
@@ -56,14 +57,14 @@ const Group: FunctionComponent<FriendListProps> = () => {
       
       <div className="flex">
       <div className="flex-grow pt-7 md:pl-10 px-3">
-      <div className="pb-4 border-b border-dark-lighten-2">
+      <div className="pb-4 border-b border-dark-lighten-2" style={{borderBottom: "1px solid black"}}>
             <h1 className="text-[35px] text-white font-semibold uppercase">
               CoolCats' Group
             </h1>
       </div>
 
       <div style={{display: "flex", flexDirection: "row", borderBottom: "1px solid black", height: "75vh"}}>
-        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}></div>
+        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}><Voting /></div>
         <div style={{width: "20%", float: "right", borderLeft: "1px solid black"}}><Chat /></div>
       </div>
 
@@ -123,7 +124,7 @@ const Group: FunctionComponent<FriendListProps> = () => {
         <div className="flex gap-6 items-center">
             <FaUserCircle size={25} />
             <p className="text-white mt-5 text-xl font-medium mb-3">
-            KlausMikaelson
+            {currentUser?.displayName} (You)
             </p>
             {!ready[3] ?
             <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#CE2121", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height:30, width:90, marginTop: 8, marginLeft: 10}}>  
