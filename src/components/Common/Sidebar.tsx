@@ -116,9 +116,9 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
           </Link>
 
       <Link
-            to="/"
+            to="/public"
             className={`flex gap-6 items-center  ${
-              location.pathname === "/" &&
+              location.pathname === "/public" &&
               "!text-primary border-r-4 border-primary font-medium"
             } hover:text-white transition duration-300`}
           >
