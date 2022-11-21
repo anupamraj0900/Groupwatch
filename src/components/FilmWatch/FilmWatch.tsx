@@ -99,7 +99,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             (detail as DetailMovie).title || (detail as DetailTV).name
           } ${
             media_type === "tv" ? `- Season ${seasonId} - Ep ${episodeId}` : ""
-          } | Moonlight`}
+          } | Groupwatch`}
         />
       )}
 
@@ -110,7 +110,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Moon<span className="text-primary">light</span>
+            Group<span className="text-primary">watch</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>
@@ -130,6 +130,23 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
           <div className="relative h-0 pb-[56.25%]">
             {!detail && (
               <Skeleton className="absolute top-0 left-0 w-full h-full rounded-sm" />
+            )}
+            {detail && (
+              <iframe
+                className="absolute w-full h-full top-0 left-0"
+                src={
+                  media_type === "movie"
+                    ? embedMovie(detail.id)
+                    : embedTV(
+                        detail.id,
+                        seasonId as number,
+                        episodeId as number
+                      )
+                }
+                title="Film Video Player"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
             )}
             
           </div>
