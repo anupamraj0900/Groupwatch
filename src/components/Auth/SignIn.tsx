@@ -3,7 +3,7 @@ import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { FormEvent, FunctionComponent, useRef, useState } from "react";
+import { FormEvent, FunctionComponent, useEffect, useRef, useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -13,6 +13,7 @@ import { convertErrorCodeToMessage } from "../../shared/utils";
 import { useAppSelector } from "../../store/hooks";
 import ModalNotification from "./ModalNotification";
 import { signInWithProvider } from "./signInWithProvider";
+import { Link } from 'react-router-dom';
 
 interface SignInProps {
   setIsSignIn: any;
@@ -22,11 +23,14 @@ interface SignInProps {
 const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
   const emailRef = useRef<HTMLInputElement>(null!);
   const passwordRef = useRef<HTMLInputElement>(null!);
-  const currentUser = useAppSelector((state) => state.auth.user);
+  var currentUser = useAppSelector((state) => state.auth.user);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => console.log(currentUser), [currentUser])
+
   const signInHandler = (e: FormEvent) => {
+    //TODO useDispatch and send the action to set the user
     e.preventDefault();
 
     const email = emailRef.current.value;
@@ -34,12 +38,15 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
 
     if (!email.trim() || !password.trim()) return;
 
+    //currentUser = {displayName: 'A Mihail', photoURL: 'https://i.ibb.co/KDdd4zN/catface-2.jpg', email: 'mihail.s.mk@gmail.com', emailVerified: false, uid: 'xc6De21VuBawM1QERMykrQnQ1eO2'}
+
     setIsLoading(true);
+    
     signInWithEmailAndPassword(auth, email, password)
       .catch((error) => {
         setError(convertErrorCodeToMessage(error.code));
       })
-      .finally(() => setIsLoading(false));
+      .finally(() => {setIsLoading(false)});
   };
 
   return (
@@ -128,7 +135,7 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
             />
           </div>
           <button className="px-12 py-3 bg-primary rounded-full text-lg text-white uppercase absolute left-1/2 -translate-x-1/2 hover:bg-[#4161cc] transition duration-300">
-            Sign In
+            <Link to="/">Sign In</Link>
           </button>
         </form>
 

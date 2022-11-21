@@ -2,14 +2,14 @@
 import { doc, onSnapshot } from "firebase/firestore";
 import { FunctionComponent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Title from "../components/Common/Title";
-import FilmListViewForBookmarkAndHistory from "../components/FilmListViewForBookmarkAndHistory/FilmListViewForBookmarkAndHistory";
-import { useCurrentViewportView } from "../hooks/useCurrentViewportView";
-import Footer from "../components/Footer/Footer";
-import { db } from "../shared/firebase";
-import { Item } from "../shared/types";
-import { useAppSelector } from "../store/hooks";
-import Sidebar from "../components/Common/Sidebar";
+import Title from "../../components/Common/Title";
+import FilmListViewForBookmarkAndHistory from "../../components/FilmListViewForBookmarkAndHistory/FilmListViewForBookmarkAndHistory";
+import { useCurrentViewportView } from "../../hooks/useCurrentViewportView";
+import Footer from "../../components/Footer/Footer";
+import { db } from "../../shared/firebase";
+import { Item } from "../../shared/types";
+import { useAppSelector } from "../../store/hooks";
+import Sidebar from "../../components/Common/Sidebar";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { AiOutlineHistory, AiOutlineHome } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
@@ -18,7 +18,7 @@ import {FaUserCircle } from "react-icons/fa";
 import {IoEnterSharp} from "react-icons/io5"
 interface FriendListProps {}
 
-const FriendList: FunctionComponent<FriendListProps> = () => {
+const Voting: FunctionComponent<FriendListProps> = () => {
   const currentUser = useAppSelector((state) => state.auth.user);
   const [recentlyWatchFilms, setRecentlyWatchFilms] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState(
@@ -74,7 +74,7 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
           
         />
       </form>
-      <p>Here you will find your list of friends and the watch activity of your friends. You can join friends who are currently watching or who have open groups.</p>
+      <p>Here you will find your list of friends and the watch activity of your friends.</p>
       <div className="mt-8 ml-4 grid gap-6 grid-cols-2">
         
       <div className="flex gap-6 items-center">
@@ -85,27 +85,17 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
               </div>
 
               <div className="flex gap-6 items-center">
-                <FaUserCircle size={25} />
-                <p className="text-white mt-5 text-xl font-medium mb-3">
-                  SenatorYoshi
-                </p>
+              <FaUserCircle size={25} />
+              <p className="text-white mt-5 text-xl font-medium mb-3">
+                SenatorYoshi
+              </p>
               </div>
 
               <div className="flex gap-6 items-center">
-                <FaUserCircle size={25} />
-                <p className="text-white mt-5 text-xl font-medium mb-3">
-                  CoolCat
-                </p>
-                
-                <button className="hover:text-white transition duration-300" style={{width:"25%", marginLeft: 20}}> 
-                <Link to="/groups/62e13b6d-5cad-4ebd-82f6-709f934d9f81">
-                  <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height:40}}>
-                        
-                        <p className ="text-white mt-5 text-xl font-medium mb-3" style={{textAlign: "center", paddingBottom: 5, fontSize: "90%"}}> Join party </p> 
-                  </div>
-                </Link>
-                </button>
-                
+              <FaUserCircle size={25} />
+              <p className="text-white mt-5 text-xl font-medium mb-3">
+                CoolCat
+              </p>
               </div>
 
               <div className="flex gap-6 items-center">
@@ -154,7 +144,7 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
       </div>
 
       <div style={{display: "flex"}}>
-        <div style={{display: "flex", flexDirection: "column", flexGrow: 1, width: "50%"}}>
+        <div style={{display: "flex", flexDirection: "column", flexGrow: 1}}>
           <div className="flex gap-6 items-center">
             <FaUserCircle size={25} />
             <p className="text-white mt-5 text-xl font-medium mb-3">
@@ -163,14 +153,14 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
           </div>
           
           <button className="hover:text-white transition duration-300" style={{width:"35%"}}> 
-            <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center", height:50}}>
+            <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center"}}>
                   <IoEnterSharp size={"50px"} style={{paddingLeft: 20}}/>   
                   <p className ="text-white mt-5 text-xl font-medium mb-3" style={{textAlign: "left", paddingBottom: 5}}> Join party </p> 
             </div>
           </button>
         </div>
 
-        <div style={{display: "flex", flexDirection: "column", flexGrow: 1, width: "50%"}}>
+        <div style={{display: "flex", flexDirection: "column", flexGrow: 1}}>
           <div className="flex gap-6 items-center">
             <FaUserCircle size={25} />
             <p className="text-white mt-5 text-xl font-medium mb-3">
@@ -179,7 +169,7 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
           </div>
           
           <button className="hover:text-white transition duration-300" style={{width:"35%"}}> 
-            <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center", height:50}}>
+            <div className="flex gap-6 items-center" style={{borderRadius: 10, backgroundColor: "#2596be", display: "flex", flexDirection: "row", alignItems: "center"}}>
                   <IoEnterSharp size={"50px"} style={{paddingLeft: 20}}/>   
                   <p className ="text-white mt-5 text-xl font-medium mb-3" style={{textAlign: "left", paddingBottom: 5}}> Join party </p> 
             </div>
@@ -196,4 +186,4 @@ const FriendList: FunctionComponent<FriendListProps> = () => {
   );
 };
 
-export default FriendList;
+export default Voting;

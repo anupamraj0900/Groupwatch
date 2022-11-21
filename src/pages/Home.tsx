@@ -71,7 +71,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Title value="GroupWatch" />
+      <Title value="Groupwatch" />
 
       <div className="flex md:hidden justify-between items-center px-5 my-5">
         <Link to="/" className="flex gap-2 items-center">

@@ -17,6 +17,7 @@ import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import TVInfo from "./pages/TV/TVInfo";
 import TVWatch from "./pages/TV/TVWatch";
+import Group from "./pages/Voting/Group";
 import { auth, db } from "./shared/firebase";
 import { useAppDispatch } from "./store/hooks";
 import { setCurrentUser } from "./store/slice/authSlice";
@@ -100,6 +101,7 @@ function App() {
       <Route path="explore" element={<Explore />} />
       <Route path="friends" element={<FriendList />} />
       <Route path="search" element={<Search />} />
+      <Route path="/groups/62e13b6d-5cad-4ebd-82f6-709f934d9f81" element={<Group />} />
       <Route path="auth" element={<Auth />} />
       <Route
         path="bookmarked"
