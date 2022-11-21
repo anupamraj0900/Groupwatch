@@ -117,7 +117,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
           <GiHamburgerMenu size={25} />
         </button>
       </div>
-
+ 
       <div className="flex flex-col md:flex-row">
         {!isMobile && <SidebarMini />}
         {isMobile && (
