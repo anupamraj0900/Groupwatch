@@ -131,23 +131,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             {!detail && (
               <Skeleton className="absolute top-0 left-0 w-full h-full rounded-sm" />
             )}
-            {detail && (
-              <iframe
-                className="absolute w-full h-full top-0 left-0"
-                src={
-                  media_type === "movie"
-                    ? embedMovie(detail.id)
-                    : embedTV(
-                        detail.id,
-                        seasonId as number,
-                        episodeId as number
-                      )
-                }
-                title="Film Video Player"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            )}
+            
           </div>
           <div className="mt-5 pb-8">
             <div className="flex justify-between md:text-base text-sm">

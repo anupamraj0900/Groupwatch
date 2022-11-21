@@ -11,7 +11,7 @@ const Auth: FunctionComponent<AuthProps> = () => {
   const { isMobile } = useCurrentViewportView();
   return (
     <>
-      <Title value={"Sign In | Moonlight"} />
+      <Title value={"Sign In | Groupwatch"} />
 
       {!isMobile && (
         <video
@@ -21,10 +21,6 @@ const Auth: FunctionComponent<AuthProps> = () => {
           id="myVideo"
           className="fixed md:-top-[130px] -top-[155px] object-cover left-0 h-[135vh] w-full -z-10"
         >
-          <source
-            src="https://raw.githubusercontent.com/fuocy/video/master/endgame.mp4"
-            type="video/mp4"
-          />
         </video>
       )}
 
