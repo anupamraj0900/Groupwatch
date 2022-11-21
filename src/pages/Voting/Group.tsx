@@ -55,16 +55,16 @@ const Group: FunctionComponent<FriendListProps> = () => {
 <>
       
       <div className="flex">
-      <div className="flex-grow pt-7 md:pl-10 px-3" style={{height: "90vh", width: "90vh"}}>
+      <div className="flex-grow pt-7 md:pl-10 px-3">
       <div className="pb-4 border-b border-dark-lighten-2">
             <h1 className="text-[35px] text-white font-semibold uppercase">
-              Vote! 
+              CoolCats' Group
             </h1>
       </div>
 
-      <div style={{display: "flex", flexDirection: "row", borderBottom: "1px solid black"}}>
-          <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}><Chat /></div>
-        <div style={{width: "20%", height:"86.5vh", float: "right", borderLeft: "1px solid black"}}><Chat /></div>
+      <div style={{display: "flex", flexDirection: "row", borderBottom: "1px solid black", height: "75vh"}}>
+        <div style={{width: "80%", float: "left", borderLeft: "1px solid black", borderRight: "1px solid black"}}></div>
+        <div style={{width: "20%", float: "right", borderLeft: "1px solid black"}}><Chat /></div>
       </div>
 
       <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-0 " style={{float: "inline-end", width: "80%", marginLeft:"200px", marginRight:"50px"}}>

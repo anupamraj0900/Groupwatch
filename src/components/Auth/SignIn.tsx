@@ -135,7 +135,8 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
             />
           </div>
           <button className="px-12 py-3 bg-primary rounded-full text-lg text-white uppercase absolute left-1/2 -translate-x-1/2 hover:bg-[#4161cc] transition duration-300">
-            <Link to="/">Sign In</Link>
+            {/*<Link to="/">Sign In</Link>*/}
+            Sign In
           </button>
         </form>
 

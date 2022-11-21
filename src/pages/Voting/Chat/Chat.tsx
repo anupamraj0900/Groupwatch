@@ -73,38 +73,39 @@ export const Chat: FunctionComponent<FriendListProps> = () => {
 
   if (isError) return <div>ERROR</div>;
   return (
-    <div>
-    <div className="text-[35px] text-white font-semibold uppercase" style={{paddingLeft: 10, paddingTop: 10}}>Chat</div>
-    <div style={{backgroundColor: "#d8d8d8", borderRadius: 10, padding:15, color: "black"}}>
-    <div>
-        {messages.map((message) => {
-            return (
-                <div>
+    <div style={{height: "100%", overflow: "auto"}}>
+      <div className="text-[35px] text-white font-semibold uppercase" style={{padding: 10}}>Chat</div>
+      <div style={{backgroundColor: "#d8d8d8", borderRadius: 10, padding:15, color: "black", height: "85%", overflow: "scroll"}}>
+        <div>
+            {messages.map((message) => {
+                return (
                     <div>
-                        <div>
-                            {message.user + ":"}
-                        </div>
-                        <div>
-                            {message.message}    
+                        <div style={{paddingTop: 15}}>
+                            <div>
+                                <b>{message.user + (message.user == currentUser?.displayName ? " (you)" : "") + ":"}</b>
+                            </div>
+                            <div>
+                                {message.message}    
+                            </div>
                         </div>
                     </div>
-                </div>
-            )
-        })}
-        
-    </div>
-    </div>
-    <div>
-        <input
-          className="w-full pl-14 pr-7 outline-none bg-transparent py-3 placeholder-gray-500 text-white"
-          type="text"
-          id="message"
-          placeholder="Send a message"
-          value={messageToSend}
-          onChange={handleChange}
-        />
-        <button onClick={handleClick}>Click</button>
+                )
+            })}
+            
         </div>
+      </div>
+      <div style={{display: "flex", paddingTop: 15, height: "6%"}}>
+          <input
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            id="message"
+            placeholder="Send a message"
+            value={messageToSend}
+            onChange={handleChange}
+            style={{color: "black", width:"70%", borderRadius:10, marginLeft: 10}}
+          />
+          <button onClick={handleClick} style={{marginLeft: 15, marginRight: 10, width: "25%"}} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send</button>
+      </div>
     </div>
   );
 };
